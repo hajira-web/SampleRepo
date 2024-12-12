@@ -1,6 +1,7 @@
 package Testscript;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -19,12 +20,14 @@ import com.google.common.io.Files;
 
 import Pages.QALegendClientsPage;
 import Pages.QALegendEstimatePage;
+import Pages.QALegendFinancePage;
 import Pages.QALegendHomePage;
 import Pages.QALegendInvoicePage;
 import Pages.QALegendItemPage;
 import Pages.QALegendLeavePage;
 import Pages.QALegendMessagePage;
 import Pages.QALegendNotePage;
+import Pages.QALegendProjectPage;
 import Pages.QALegendTicketsPage;
 import Pages.qaLegentLoginPage;
 import constants.Constants;
@@ -43,6 +46,12 @@ public class Base {
 	QALegendEstimatePage estimatepage;
 	QALegendMessagePage messagepage;
 	QALegendTicketsPage ticketspage;
+	QALegendProjectPage projectpage;
+	QALegendFinancePage financepage;
+
+	
+
+
 	
 	@BeforeMethod(alwaysRun = true)
 	@Parameters({"browser"})
@@ -84,6 +93,11 @@ public class Base {
 		estimatepage=new QALegendEstimatePage(driver);
 		messagepage=new QALegendMessagePage(driver);
 		ticketspage=new QALegendTicketsPage(driver);
+		projectpage=new QALegendProjectPage(driver);
+	financepage=new QALegendFinancePage(driver);
+
+		
+		
 	}
 	/*public String getScreesnShotPath(String testcasename) throws IOException {
 		TakesScreenshot ts=(TakesScreenshot)driver;

@@ -33,17 +33,30 @@ public class QALegendClientsTest extends Base {
 		Assert.assertEquals(clientpage.getnewlyAddedcompayname(), companynameaddclient1);
 		
 		
-		//Assert.assertEquals(notepage.getNewlyAddedTitle(), companyname);
-		//clientpage.clickOnSearchTextBoxClient();
+		
 		}
 	@Test
 	
-	public void addAlphabetZipCode() {
+	public void addAlphabetZipCode() throws InterruptedException {
 		loginpage.loginToQaLegend(properties.getProperty("username"), properties.getProperty("password"));
 		homepage.clickOnClientsTitle();
+		clientpage.clickOnAddClientButton();
+		String companynameaddclient2=properties.getProperty("companynameaddclient2")+FakerUtility.randomNumberGenerator();
+		clientpage.addClientTitleName(companynameaddclient2);
+		clientpage.clickOnSaveAddClientPage();
+		Thread.sleep(2000);
+		clientpage.clickOnSearchButton(companynameaddclient2);
+		Thread.sleep(2000);
 		clientpage.clickOnClientEditButton();
-		clientpage.clickOnZipTextBox(properties.getProperty("zip"));
-		clientpage.clickOnClientDetialSaveButton();
+		String zip=properties.getProperty("zip")+FakerUtility.randomNumberGenerator();
+		clientpage.clickOnZipTextBox(zip);
+		clientpage.clickOnSaveAddClientPage();
+		Thread.sleep(1000);
+		clientpage.clickOnClientEditButton();
+		Thread.sleep(1000);
+		Assert.assertEquals(clientpage.getEditedZip(), zip);
+		
+		
 		
 	}
 

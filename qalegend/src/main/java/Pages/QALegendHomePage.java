@@ -24,12 +24,24 @@ WebElement dashboard_notesbutton;
 WebElement clickestimatetitle;
 	@FindBy(xpath="(//i[@class='dot fa fa-circle'])[5]")
 	WebElement clickestimatelist;
+	
+	@FindBy(xpath="(//i[@class='dot fa fa-circle'])[7]")
+	WebElement estimateformtitle;
+	
 	@FindBy(xpath="//i[@class='fa fa-envelope']")
 	WebElement clickmessagestitle;
 	@FindBy(xpath="//i[@class='fa fa-life-ring']")
 	WebElement clickticketstitle;
 	@FindBy(xpath="(//i[@class='dot fa fa-circle'])[6]")
 	WebElement clickestimaterequest;
+	@FindBy(xpath="//i[@class='fa fa-th-large']")
+	WebElement projecttitle;
+	@FindBy(xpath="(//i[@class='dot fa fa-circle'])[1]")
+	WebElement allprojects_projects;
+	@FindBy(xpath="//i[@class='fa fa-money']")
+	WebElement financetitle;
+	@FindBy(xpath="(//i[@class='dot fa fa-circle'])[9]")
+	WebElement expenses_finance;
 
 
 
@@ -83,5 +95,20 @@ public void clickOnTicketsTitle() {
 public void clickOnEstimateRequest() {
 	clickestimaterequest.click();
 }
+public void clickOnProjectTitle() {
+	projecttitle.click();
+}
+public void clickOnAllProjects() {
+	allprojects_projects.click();
+}
+public void clickOnEstimateFormTitle() {
+estimateformtitle.click();	
+}
 	
+public void clickOnFinanceTitle() {
+	financetitle.click();
+}
+public void clickOnExpensesFinanceSubTitle() {
+	expenses_finance.click();
+}
 }

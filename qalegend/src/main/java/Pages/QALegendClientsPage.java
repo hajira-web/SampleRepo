@@ -33,10 +33,12 @@ public class QALegendClientsPage {
 	
 	
 	
+	@FindBy(xpath="(//input[@class='form-control'])[4]")
+	WebElement clickziptextbox;
 	
 	
 	@FindBy(xpath="(//input[@class='form-control'])[4]")
-	WebElement clickziptextbox;
+	WebElement editedzip;
 	
 	
 public QALegendClientsPage(WebDriver driver) {
@@ -99,8 +101,10 @@ public void clearTextOnSearchButtonOnClientPage() throws InterruptedException {
 public String getnewlyAddedcompayname() {
 	String companyname=newlyaddedcompanyname.getText();
 	return companyname;
+}
 
-	
-
+public String  getEditedZip() {
+	String editedzip1=editedzip.getText();
+	return editedzip1;
 }
 }
