@@ -20,14 +20,8 @@ public class QALegendFinanceTest extends Base {
 		String titleaddexpense=properties.getProperty("titleaddexpense")+FakerUtility.randomNumberGenerator();
 		financepage.enterTitleOnAddExpense(titleaddexpense);
 		financepage.clickOnSaveButtonAddExpenses();
-		Thread.sleep(2000);
 		financepage.searchNewlyAddedTitle(titleaddexpense);
-		Thread.sleep(2000);
 		Assert.assertEquals(financepage.getNewlyAddedamount_expenses(), amountexpenses);
-		
-		
-		
-		
-	}
+		}
 
 }

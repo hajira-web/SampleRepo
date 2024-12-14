@@ -46,7 +46,7 @@ public class QALegendProjectPage {
 			savebutton_projectpage.click();
 		}
 		public void clickOnSearchButton(String titleproject) throws InterruptedException {
-			Thread.sleep(2000);
+Thread.sleep(2000);
 			searchbutton_projectpage.sendKeys(titleproject);
 		}
 		public String getNewlyAddedTitleProject() {

@@ -17,9 +17,6 @@ public class QALegendClientsPage {
 	WebElement clickonclientsavebutton;
 	@FindBy(xpath="//div[@class='dataTables_filter']//child::input")
 	WebElement clicksearchbuttonclient;
-	
-	
-	
 	@FindBy(xpath="(//a[@class='edit'])[1]")
 	WebElement clickclienteditbutton;
 	@FindBy(xpath="(//input[@class='form-control'])[1]")
@@ -30,13 +27,8 @@ public class QALegendClientsPage {
 	WebElement clientsearchbutton;
 	@FindBy(xpath="//table[@class='display dataTable no-footer']//descendant::a")
 	WebElement newlyaddedcompanyname;
-	
-	
-	
 	@FindBy(xpath="(//input[@class='form-control'])[4]")
 	WebElement clickziptextbox;
-	
-	
 	@FindBy(xpath="(//input[@class='form-control'])[4]")
 	WebElement editedzip;
 	
@@ -58,25 +50,17 @@ public void clickOnSaveAddClientPage() {
 public void clickOnSearchButton(String companynameaddclient) throws InterruptedException {
 	Thread.sleep(1000);
 pageutilities.clickUsingJavaScript(clicksearchbuttonclient);
-Thread.sleep(1000);
 pageutilities.enterKeyPress();
-Thread.sleep(1000);
 pageutilities.enterTextOnWebelement(clicksearchbuttonclient, companynameaddclient);
 
 }
 public void clearTextOnCompanyNameTextBox() {
 	companynametextbox.clear();
 }
-
-
-	public void clickOnClientEditButton() {
+public void clickOnClientEditButton() {
 		clickclienteditbutton.click();
 	}
-public void addClientTitleName(String companyname) throws InterruptedException {
-	//pageutilities.clickUsingJavaScript(companynametextbox);
-	Thread.sleep(1000);
-	//pageutilities.clickUsingJavaScript(companynametextbox);
-	//Thread.sleep(1000);
+public void addClientTitleName(String companyname){
 	pageutilities.enterTextOnWebelement(companynametextbox, companyname);
 }
 public void clickOnClientDetialSaveButton() {
@@ -86,14 +70,12 @@ public void clickOnZipTextBox(String zip) {
 	pageutilities.clickUsingJavaScript(clickziptextbox);
 	pageutilities.enterTextOnWebelement(clickziptextbox, zip);
 }
-public void clickOnSearchButtonClientPage(String companynameaddclient1) throws InterruptedException {
-	Thread.sleep(2000);
+public void clickOnSearchButtonClientPage(String companynameaddclient1){
 	clientsearchbutton.sendKeys(companynameaddclient1);	
-	Thread.sleep(2000);
 	}
 
 public void clearTextOnSearchButtonOnClientPage() throws InterruptedException {
-	Thread.sleep(2000);
+Thread.sleep(2000);
 	clientsearchbutton.clear();
 }
 

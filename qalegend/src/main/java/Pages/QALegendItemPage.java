@@ -60,7 +60,7 @@ public class QALegendItemPage {
 		savebuttonadditem.click();
 	}
 	public void enterNewlyAddedTitleOnSearchBox(String titleadditem) throws InterruptedException {
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 	searchtextbox.sendKeys(titleadditem);	
 	}
 	public String getNewlyAddedTitle() {

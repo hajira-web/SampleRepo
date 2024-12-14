@@ -7,7 +7,7 @@ import Utilities.FakerUtility;
 
 public class QALegendInvoiceTest extends Base {
 	public WebDriver driver;
-	@Test
+	@Test(retryAnalyzer = Testscript.RetryAnalyser.class )
 	public void invoicepayment() throws InterruptedException {
 		loginpage.loginToQaLegend(properties.getProperty("username"), properties.getProperty("password"));
 		homepage.clickoninvoicetitle();

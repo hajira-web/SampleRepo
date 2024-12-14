@@ -11,27 +11,27 @@ import constants.Constants;//allertobe
 
 public class WaitUtility {
 public WebDriver driver;
-public void waitForClickingElement(WebDriver driver,WebElement element) {
+public static void waitForClickingElement(WebDriver driver,WebElement element) {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 	wait.until(ExpectedConditions.elementToBeClickable(element));
 }
-public void waitForTextToBePresentInTheElement(WebDriver driver,WebElement element,String text) {
+public static void waitForTextToBePresentInTheElement(WebDriver driver,WebElement element,String text) {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 	wait.until(ExpectedConditions.textToBePresentInElement(element, text));
 }
-public void waitForElementTobeSelected(WebDriver driver,WebElement element) {
+public static void waitForElementTobeSelected(WebDriver driver,WebElement element) {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 	wait.until(ExpectedConditions.elementToBeSelected(element));
 }
-public void waitForAttributeToBe(WebDriver driver,WebElement element,String attribute,String value) {
+public static void waitForAttributeToBe(WebDriver driver,WebElement element,String attribute,String value) {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 	wait.until(ExpectedConditions.attributeToBe(element, attribute, value));
 }
-public void waitForVisibilityOfAnElement(WebDriver driver,WebElement element) {
+public static void waitForVisibilityOfAnElement(WebDriver driver,WebElement element) {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 	wait.until(ExpectedConditions.visibilityOf(element));
 }
-public void waitForAlertIsPresent(WebDriver driver) {
+public static void waitForAlertIsPresent(WebDriver driver) {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));
 	wait.until(ExpectedConditions.alertIsPresent());
 }

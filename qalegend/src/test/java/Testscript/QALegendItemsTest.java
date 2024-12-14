@@ -18,7 +18,6 @@ public void deleteItem() throws InterruptedException {
 		itempage.enterTextOnTitleTextBox(titleadditem1);
 		itempage.enterRateOnRateTextBox();
 		itempage.clickOnSaveButtonAddItem();
-		Thread.sleep(1000);
 		itempage.enterNewlyAddedTitleOnSearchBox(titleadditem1);
 		itempage.clickOnDeleteButton();
 		Assert.assertNotEquals(itempage.getDeletedTitle(), titleadditem1);
@@ -34,7 +33,6 @@ public void deleteItem() throws InterruptedException {
 		itempage.enterTextOnTitleTextBox(titleadditem);
 		itempage.enterRateOnRateTextBox();
 		itempage.clickOnSaveButtonAddItem();
-		Thread.sleep(1000);
 		itempage.enterNewlyAddedTitleOnSearchBox(titleadditem);
 		Assert.assertEquals(itempage.getNewlyAddedTitle(), titleadditem);
 	}

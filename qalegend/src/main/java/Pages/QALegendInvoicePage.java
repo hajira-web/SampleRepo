@@ -24,11 +24,7 @@ public class QALegendInvoicePage {
 	WebElement savebuttonpress;
 	
 	
-	
-	
-	
-	
-	public QALegendInvoicePage(WebDriver driver) {
+public QALegendInvoicePage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver=driver;
 		this.pageutilities=new PageUtilities(driver);

@@ -16,9 +16,6 @@ public class QALegendTicketsTest extends Base {
 		Thread.sleep(2000);
 	String titleticket=properties.getProperty("titleticket")+FakerUtility.randomNumberGenerator();;
 		ticketspage.enterTitle(titleticket);
-	
-		//ticketspage.clickOnClientDropDown();
-	//ticketspage.clickOnClientDropDownSelection();
 		Thread.sleep(3000);
 		ticketspage.enterTextonDescription();
 		ticketspage.clicOnSaveButton();
@@ -26,13 +23,7 @@ public class QALegendTicketsTest extends Base {
 		ticketspage.clicOnSearchBox(titleticket);
 		Thread.sleep(1000);
 		Assert.assertEquals(ticketspage.getNewlyAddedTitleTicket(), titleticket);
-		
-		
-		
-		
-	/*	ticketspage.cliclOnSettingButton();
-		ticketspage.clickOnDeleteButton();
-		ticketspage.clickOnDeleteSureButton();*/
+
 	}
 
 }

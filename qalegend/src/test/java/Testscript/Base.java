@@ -13,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
@@ -24,12 +26,11 @@ import Pages.QALegendFinancePage;
 import Pages.QALegendHomePage;
 import Pages.QALegendInvoicePage;
 import Pages.QALegendItemPage;
-import Pages.QALegendLeavePage;
-import Pages.QALegendMessagePage;
 import Pages.QALegendNotePage;
 import Pages.QALegendProjectPage;
 import Pages.QALegendTicketsPage;
 import Pages.qaLegentLoginPage;
+import Utilities.ScreenShotUtility;
 import constants.Constants;
 
 public class Base {
@@ -39,12 +40,11 @@ public class Base {
 	qaLegentLoginPage loginpage;
 	QALegendHomePage homepage;
 	QALegendNotePage notepage;
-	QALegendLeavePage leavepage;
 	QALegendInvoicePage invoicePage;
 	QALegendItemPage itempage;
 	QALegendClientsPage clientpage;
 	QALegendEstimatePage estimatepage;
-	QALegendMessagePage messagepage;
+
 	QALegendTicketsPage ticketspage;
 	QALegendProjectPage projectpage;
 	QALegendFinancePage financepage;
@@ -86,12 +86,10 @@ public class Base {
 		loginpage = new qaLegentLoginPage(driver);
 		homepage=new QALegendHomePage(driver);
 		notepage = new QALegendNotePage(driver);
-		leavepage = new QALegendLeavePage(driver); 
 		invoicePage = new QALegendInvoicePage(driver);	
 		itempage = new QALegendItemPage(driver);
 		clientpage=new QALegendClientsPage(driver);
 		estimatepage=new QALegendEstimatePage(driver);
-		messagepage=new QALegendMessagePage(driver);
 		ticketspage=new QALegendTicketsPage(driver);
 		projectpage=new QALegendProjectPage(driver);
 	financepage=new QALegendFinancePage(driver);
@@ -99,7 +97,21 @@ public class Base {
 		
 		
 	}
-	/*public String getScreesnShotPath(String testcasename) throws IOException {
+	@AfterMethod(alwaysRun = true)
+	public void AfterMethod(ITestResult itResult) throws IOException {
+		if(itResult.getStatus()==ITestResult.FAILURE) {
+			ScreenShotUtility sc = new ScreenShotUtility();
+			sc.captureFailedScreenShots(driver, itResult.getName());
+		}
+		if(driver!=null) {
+			driver.quit();
+		}
+	}
+	
+	
+	
+	
+/*public String getScreesnShotPath(String testcasename) throws IOException {
 		TakesScreenshot ts=(TakesScreenshot)driver;
 		File source=ts.getScreenshotAs(OutputType.FILE);
 		String destinationfile= System.getProperty("user.dir")+"\\test-output\\"+testcasename+".png";
