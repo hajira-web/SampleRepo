@@ -1,0 +1,8 @@
+Testscript\QALegendNoteTest.class
+Testscript\QALegendClientsTest.class
+Testscript\QALegendInvoiceTest.class
+Testscript\QALegendItemsTest.class
+Testscript\QALegendTicketsTest.class
+Testscript\Base.class
+Testscript\QALegendEstimateTest.class
+Testscript\Listeners.class

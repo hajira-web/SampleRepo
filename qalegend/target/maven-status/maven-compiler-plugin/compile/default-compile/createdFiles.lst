@@ -1,0 +1,15 @@
+Pages\QALegendEstimatePage.class
+Utilities\FakerUtility.class
+Pages\QALegendNotePage.class
+Pages\QALegendInvoicePage.class
+Pages\QALegendTicketsPage.class
+Pages\QALegendClientsPage.class
+Utilities\ExcelUtility.class
+Utilities\ExtentReportNG.class
+Pages\qaLegentLoginPage.class
+Pages\QALegendHomePage.class
+Utilities\FileUploadUtilities.class
+Pages\QALegendItemPage.class
+constants\Constants.class
+Utilities\PageUtilities.class
+Utilities\WaitUtility.class

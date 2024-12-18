@@ -7,10 +7,25 @@ import org.testng.annotations.Test;
 import Utilities.FakerUtility;
 
 public class QALegendItemsTest extends Base {
-	public WebDriver driver;
-	@Test
 	
-public void deleteItem() throws InterruptedException {
+	public WebDriver driver;
+	
+	
+	
+	@Test(priority = 1)
+	public void additem() throws InterruptedException {
+		loginpage.loginToQaLegend(properties.getProperty("username"), properties.getProperty("password"));
+		homepage.clickOnItemsTitle();
+		itempage.clickOnAddItemsButton();
+		String titleadditem=properties.getProperty("titleadditem")+FakerUtility.randomNumberGenerator();
+		itempage.enterTextOnTitleTextBox(titleadditem);
+		itempage.enterRateOnRateTextBox();
+		itempage.clickOnSaveButtonAddItem();
+		itempage.enterNewlyAddedTitleOnSearchBox(titleadditem);
+		Assert.assertEquals(itempage.getNewlyAddedTitle(), titleadditem);
+	}
+@Test(priority = 2)
+	public void deleteItem() throws InterruptedException {
 		loginpage.loginToQaLegend(properties.getProperty("username"), properties.getProperty("password"));
 		homepage.clickOnItemsTitle();
 		itempage.clickOnAddItemsButton();
@@ -24,8 +39,9 @@ public void deleteItem() throws InterruptedException {
 
 	}
 	
-	@Test
-	public void additem() throws InterruptedException {
+
+	@Test(priority = 3)
+	public void editItem() throws InterruptedException {
 		loginpage.loginToQaLegend(properties.getProperty("username"), properties.getProperty("password"));
 		homepage.clickOnItemsTitle();
 		itempage.clickOnAddItemsButton();
@@ -34,7 +50,7 @@ public void deleteItem() throws InterruptedException {
 		itempage.enterRateOnRateTextBox();
 		itempage.clickOnSaveButtonAddItem();
 		itempage.enterNewlyAddedTitleOnSearchBox(titleadditem);
-		Assert.assertEquals(itempage.getNewlyAddedTitle(), titleadditem);
+		Assert.assertEquals(itempage.getNewlyAddedTitle(), titleadditem);   
 	}
 
 }

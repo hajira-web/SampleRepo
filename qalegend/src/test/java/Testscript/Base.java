@@ -28,7 +28,6 @@ import Pages.QALegendInvoicePage;
 import Pages.QALegendItemPage;
 import Pages.QALegendNotePage;
 import Pages.QALegendProjectPage;
-import Pages.QALegendTicketsPage;
 import Pages.qaLegentLoginPage;
 import Utilities.ScreenShotUtility;
 import constants.Constants;
@@ -44,8 +43,6 @@ public class Base {
 	QALegendItemPage itempage;
 	QALegendClientsPage clientpage;
 	QALegendEstimatePage estimatepage;
-
-	QALegendTicketsPage ticketspage;
 	QALegendProjectPage projectpage;
 	QALegendFinancePage financepage;
 
@@ -90,7 +87,6 @@ public class Base {
 		itempage = new QALegendItemPage(driver);
 		clientpage=new QALegendClientsPage(driver);
 		estimatepage=new QALegendEstimatePage(driver);
-		ticketspage=new QALegendTicketsPage(driver);
 		projectpage=new QALegendProjectPage(driver);
 	financepage=new QALegendFinancePage(driver);
 
@@ -98,26 +94,18 @@ public class Base {
 		
 	}
 	@AfterMethod(alwaysRun = true)
-	public void AfterMethod(ITestResult itResult) throws IOException {
-		if(itResult.getStatus()==ITestResult.FAILURE) {
+	public void AfterMethod(ITestResult itResult) throws IOException {	
+		if (itResult.getStatus()==ITestResult.FAILURE) {
 			ScreenShotUtility sc = new ScreenShotUtility();
-			sc.captureFailedScreenShots(driver, itResult.getName());
+			sc.captureFailedScreenShots(driver, itResult.getName());			
 		}
-		if(driver!=null) {
-			driver.quit();
+		if (driver!=null) {
+			driver.quit();		
 		}
 	}
 	
 	
 	
-	
-/*public String getScreesnShotPath(String testcasename) throws IOException {
-		TakesScreenshot ts=(TakesScreenshot)driver;
-		File source=ts.getScreenshotAs(OutputType.FILE);
-		String destinationfile= System.getProperty("user.dir")+"\\test-output\\"+testcasename+".png";
-		Files.copy(source, new File(destinationfile));
-		return destinationfile;
-	}*/
 
 
 }

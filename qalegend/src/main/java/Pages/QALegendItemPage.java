@@ -10,6 +10,8 @@ import Utilities.PageUtilities;
 public class QALegendItemPage {
 	public WebDriver driver;
 	public PageUtilities pageutilities;
+	
+	
 	@FindBy(xpath="//i[@class='fa fa-times fa-fw']")
 	WebElement clickdeletebutton;
 	
@@ -30,13 +32,6 @@ public class QALegendItemPage {
 	WebElement deletedtitle;
 	
 
-	
-	
-	
-	
-	
-	
-	
 	public QALegendItemPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver=driver;
@@ -60,7 +55,7 @@ public class QALegendItemPage {
 		savebuttonadditem.click();
 	}
 	public void enterNewlyAddedTitleOnSearchBox(String titleadditem) throws InterruptedException {
-		//Thread.sleep(2000);
+		Thread.sleep(2000);
 	searchtextbox.sendKeys(titleadditem);	
 	}
 	public String getNewlyAddedTitle() {
@@ -71,6 +66,8 @@ public class QALegendItemPage {
 		String deletedtitle1=deletedtitle.getText();
 		return deletedtitle1;
 	}
+	
+	
 		
 	}
 	

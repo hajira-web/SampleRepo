@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+
+	<listeners>
+    	<listener class-name="TestScripts.Listeners"></listener>
+	</listeners>
+
+	<parameter name="browser" value="Chrome"></parameter>
+  	<test thread-count="3" name="Test" parallel="methods">
+  	
+   	<classes>       	
+  		<class name="TestScripts.QALegendItemsTest">
+      		<methods>     			
+      			<include name="deleteItem"></include>
+      			<include name="editItem"></include>
+      	
+      		</methods>
+      	</class>     	    	    	     
+    </classes>
+    
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

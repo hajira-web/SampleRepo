@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" verbose="0">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="Testscript.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)" verbose="0">
+    <classes>
+      <class name="Testscript.QALegendClientsTest">
+        <methods>
+          <include name="browserinitialisation"/>
+          <include name="AfterMethod"/>
+          <include name="editClientsDetials"/>
+          <include name="addAlphabetZipCode"/>
+        </methods>
+      </class> <!-- Testscript.QALegendClientsTest -->
+      <class name="Testscript.QALegendFinanceTest">
+        <methods>
+          <include name="addExpensesFinance"/>
+          <include name="browserinitialisation"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- Testscript.QALegendFinanceTest -->
+      <class name="Testscript.QALegendProjectTest">
+        <methods>
+          <include name="browserinitialisation"/>
+          <include name="addNewproject"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- Testscript.QALegendProjectTest -->
+      <class name="Testscript.QALegendItemsTest">
+        <methods>
+          <include name="browserinitialisation"/>
+          <include name="AfterMethod"/>
+          <include name="deleteItem"/>
+          <include name="additem"/>
+        </methods>
+      </class> <!-- Testscript.QALegendItemsTest -->
+      <class name="Testscript.QALegendTicketsTest">
+        <methods>
+          <include name="browserinitialisation"/>
+          <include name="AfterMethod"/>
+          <include name="deleteTicket"/>
+        </methods>
+      </class> <!-- Testscript.QALegendTicketsTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -55,7 +55,6 @@ public void clickAddNoteButton() {
 	public void searchNote(String notetitle) throws InterruptedException {
 		Thread.sleep(2000);
 		notepageseacrh.sendKeys(notetitle);	
-		Thread.sleep(2000);
 		
 	}
 	
